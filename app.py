@@ -213,7 +213,7 @@ if st.session_state.page == "search":
 
 # --- View Page ---
 elif st.session_state.page == "view":
-    # ... rest of the view page code ...
+    
     res = st.session_state.results
     st.title("🎯 Matching Toddler Activities")
 
@@ -334,6 +334,12 @@ elif st.session_state.page == "view":
                         st.success(f"Comment saved and submitted for {i[1]}!")
                     else:
                         st.warning("Please enter a comment before submitting.")
+                    
+                    st.markdown("---")
+                    if st.button("🔙 Back to Search", key="back_to_search_from_view"):
+                        st.session_state.page = "search"
+                        st.rerun()
+
 
 
 elif st.session_state.page == "profile":
