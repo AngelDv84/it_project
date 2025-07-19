@@ -12,6 +12,8 @@ import csv
 st.set_page_config(page_title="Toddler Activities", layout="wide")
 
 USER_FILE = "users.csv"
+SAVED_FILE = "saved_activities.csv"
+
 
 def hash_password(password):
     return hashlib.sha256(password.encode()).hexdigest()
@@ -151,19 +153,21 @@ if not st.session_state.authenticated:
 
 # --- Sidebar for authenticated users ---
 with st.sidebar:
-    st.markdown(f"""
-        <div style='font-size: 0.85rem; margin-bottom: 0.5rem; color: #555; text-align:center;'>
-            👤 <strong>{st.session_state.username}</strong>
-        </div>
-    """, unsafe_allow_html=True)
-
     st.markdown("<div style='text-align:center; margin-top: 20px;'>", unsafe_allow_html=True)
+    if st.button("👤 My Profile"):
+        st.session_state.page = "profile"
+        st.rerun()
+    if st.button("🔍 Search Activities"):
+        st.session_state.page = "search"
+        st.rerun()
     if st.button("🚪 Logout", key="logout_button"):
         st.session_state.authenticated = False
         st.session_state.login_page = "login"
         st.session_state.username = None
-        st.experimental_rerun()
+        st.rerun()
     st.markdown("</div>", unsafe_allow_html=True)
+  
+
 
 # --- Search Page ---
 if st.session_state.page == "search":
@@ -209,6 +213,7 @@ if st.session_state.page == "search":
 
 # --- View Page ---
 elif st.session_state.page == "view":
+    # ... rest of the view page code ...
     res = st.session_state.results
     st.title("🎯 Matching Toddler Activities")
 
@@ -239,7 +244,36 @@ elif st.session_state.page == "view":
                         </p>
                     </div>
             """, unsafe_allow_html=True)
-            
+                # Load saved activities
+                if os.path.exists(SAVED_FILE):
+                    saved_df = pd.read_csv(SAVED_FILE)
+                else:
+                    saved_df = pd.DataFrame(columns=["UserID", "ActivityID", "Timestamp"])
+
+                is_saved = not saved_df[
+                    (saved_df["UserID"] == st.session_state.user_id) & 
+                    (saved_df["ActivityID"] == activity_id)
+                ].empty
+
+                save_label = "❤️ Saved" if is_saved else "🤍 Save"
+                if st.button(save_label, key=f"save_{idx}"):
+                    if is_saved:
+                        saved_df = saved_df[
+                            ~((saved_df["UserID"] == st.session_state.user_id) & (saved_df["ActivityID"] == activity_id))
+                        ]
+                        st.success("Removed from saved activities.")
+                    else:
+                        new_row = pd.DataFrame([{
+                            "UserID": st.session_state.user_id,
+                            "ActivityID": activity_id,
+                            "Timestamp": datetime.datetime.now().isoformat()
+                        }])
+                        saved_df = pd.concat([saved_df, new_row], ignore_index=True)
+                        st.success("Activity saved!")
+
+                    saved_df.to_csv(SAVED_FILE, index=False)
+                    st.rerun()
+
         
                 # Show recent comments before input
                 if os.path.exists("comments.csv"):
@@ -268,6 +302,7 @@ elif st.session_state.page == "view":
                                         ~(
                                             (full_comments["UserID"] == row["UserID"]) &
                                             (full_comments["ActivityID"] == row["ActivityID"]) &
+                                            (full_comments["Title"] == row["Title"]) &
                                             (full_comments["Comment"] == row["Comment"]) &
                                             (full_comments["Timestamp"] == row["Timestamp"])
                                         )
@@ -288,6 +323,7 @@ elif st.session_state.page == "view":
                         comment_data = {
                             "UserID": st.session_state.user_id,
                             "ActivityID": activity_id,
+                            "Title": i[1],  # i[1] is the activity title from earlier in your loop
                             "Comment": comment,
                             "Timestamp": datetime.datetime.now().strftime("%Y-%m-%d")
                         }
@@ -298,6 +334,110 @@ elif st.session_state.page == "view":
                         st.success(f"Comment saved and submitted for {i[1]}!")
                     else:
                         st.warning("Please enter a comment before submitting.")
+
+
+elif st.session_state.page == "profile":
+    st.title("👤 Your Profile")
+    st.markdown(f"""
+        <div style='font-size: 1.1rem; margin-bottom: 20px; color: #444;'>
+            Logged in as <strong>{st.session_state.username}</strong>
+        </div>
+    """, unsafe_allow_html=True)
+
+
+    # Load saved activities
+    if os.path.exists(SAVED_FILE):
+        saved_df = pd.read_csv(SAVED_FILE)
+        user_saves = saved_df[saved_df["UserID"] == st.session_state.user_id]
+    else:
+        user_saves = pd.DataFrame()
+
+    st.markdown("### ❤️ Saved Activities")
+    if user_saves.empty:
+        st.info("You haven’t saved any activities yet.")
+    else:
+        saved_ids = user_saves["ActivityID"].tolist()
+        saved_activities = df[df["ActivityID"].isin(saved_ids)]
+
+        for idx, i in saved_activities.iterrows():
+            st.markdown(f"""
+                <div style="border:1px solid #ccc; padding:15px; border-radius:12px; margin-bottom:15px;">
+                    <h4>🧸 {i['Title']} at {i['Place']}</h4>
+                    <p><strong>Day:</strong> {i['Day']} at {i['Time']}</p>
+                    <p><strong>Postcode:</strong> {i['Postcode']}</p>
+                    <p><strong>Description:</strong> {i['Description']}</p>
+                </div>
+            """, unsafe_allow_html=True)
+
+            if st.button("🗑️ Remove from Saved", key=f"remove_{idx}"):
+                saved_df = saved_df[
+                    ~((saved_df["UserID"] == st.session_state.user_id) & (saved_df["ActivityID"] == i["ActivityID"]))
+                ]
+                saved_df.to_csv(SAVED_FILE, index=False)
+                st.success("Removed from saved.")
+                st.rerun()
+
+    st.markdown("### 💬 Your Recent Comments")
+
+    if os.path.exists("comments.csv"):
+        comments = pd.read_csv("comments.csv", dtype=str)
+        user_comments = comments[comments["UserID"] == st.session_state.user_id]
+
+        if not user_comments.empty:
+            for idx, row in user_comments.sort_values(by="Timestamp", ascending=False).head(10).iterrows():
+                st.markdown(f"""
+                    <div style="border:1px solid #ccc; padding:10px; border-radius:10px; margin-bottom:10px;">
+                        <strong>{row['Timestamp']}</strong> — {row['Comment']}<br/>
+                        <small>Activity: {row['Title']}</small>
+                    </div>
+                """, unsafe_allow_html=True)
+                if st.button("🗑️ Delete", key=f"del_com_{idx}"):
+                    comments = comments[
+                        ~(
+                            (comments["UserID"] == row["UserID"]) &
+                            (comments["ActivityID"] == row["ActivityID"]) &
+                            (comments["Title"] == row["Title"]) &
+                            (comments["Comment"] == row["Comment"]) &
+                            (comments["Timestamp"] == row["Timestamp"])
+                        )
+                    ]
+                    comments.to_csv("comments.csv", index=False)
+                    st.success("Comment deleted.")
+                    st.rerun()
+        else:
+            st.info("You haven't made any comments yet.")
+    else:
+        st.info("No comments found.")
+
+    st.markdown("---")
+    if st.button("❌ Delete My Account"):
+        st.warning("This will permanently delete your account and all your data.")
+        if st.button("⚠️ Confirm Delete Account"):
+            # Delete user from users.csv
+            users = pd.read_csv(USER_FILE)
+            users = users[users["userID"] != st.session_state.user_id]
+            users.to_csv(USER_FILE, index=False)
+
+            # Delete saved activities
+            if os.path.exists(SAVED_FILE):
+                saved_df = pd.read_csv(SAVED_FILE)
+                saved_df = saved_df[saved_df["UserID"] != st.session_state.user_id]
+                saved_df.to_csv(SAVED_FILE, index=False)
+
+            # Delete comments
+            if os.path.exists("comments.csv"):
+                comments = pd.read_csv("comments.csv")
+                comments = comments[comments["UserID"] != st.session_state.user_id]
+                comments.to_csv("comments.csv", index=False)
+
+            # Clear session
+            st.session_state.authenticated = False
+            st.session_state.username = None
+            st.success("Account and data deleted.")
+            st.rerun()
+
+
+
 
     st.markdown("---")
     if st.button("🔙 Back to Search"):
