@@ -335,10 +335,10 @@ elif st.session_state.page == "view":
                     else:
                         st.warning("Please enter a comment before submitting.")
                     
-                st.markdown("---")
-                if st.button("🔙 Back to Search", key="back_to_search_from_view"):
-                    st.session_state.page = "search"
-                    st.rerun()
+    st.markdown("---")
+    if st.button("🔙 Back to Search", key="back_to_search_from_view"):
+        st.session_state.page = "search"
+        st.rerun()
 
 
 
