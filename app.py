@@ -439,9 +439,9 @@ elif st.session_state.page == "profile":
 
 
 
-st.markdown("---")
-if st.button("🔙 Back to Search"):
-    st.session_state.page = "search"
-    st.rerun()
+    st.markdown("---")
+    if st.button("🔙 Back to Search"):
+        st.session_state.page = "search"
+        st.rerun()
 
 
