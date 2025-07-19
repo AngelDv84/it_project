@@ -1,0 +1,71 @@
+ActivityID,Title,Place,Address,Postcode,Age,Contact,Time,Day,Description,Booking,Price,Latitude,Longitude
+ID1,Rhyme time,Droylsden Library,"Guardsman Tony, Downes House, Manchester Rd, Droylsden, Manchester",M43 6EP,0-5 years,0161 342 4000,"9:30, 
+10:30",Thursday,"Rhyme Time is a 30 minute facilitated session for parents and carers and their babies and toddlers. The session involves nursery rhymes, songs and books.",No booking needed,Free,53.479445,-2.1476097
+ID2,Happy Tots,Ashton Church of Nazarene,"230 Stamford Street, Ashton-under-Lyne",OL6 7LJ,0-5 years,0161 330 3355,10:00,Friday,Play session for toddlers.,No booking needed,£1 per adult and £1 per child,53.4867293,-2.0959144
+ID3,Footy Tots,Hurst Community Centre,"Kings Road, Ashton",OL6 8EZ,1.5-5 years,07737 650 391,"16:00, 
+17:00",Monday,"A unique play programme for 18 months - 5 year old boys and girls helping to develop balance, co-ordination and control of a football. Also enhancing their social skills and confidence.",Booking needed,"First session is free - £5-£6.50 per session after
+(joining fee is a one off payment of £27.50)",53.4989728,-2.081997
+ID4,Footy Tots,Green Parc Centre,"Bakewell Avenue, off Mancunian Way, Haughton Green. Denton",M34 7DR,1.5-5 years,07737 650 391,"10:00, 
+11:00, 
+12:00, 
+13:00",Monday,"A unique play programme for 18 months - 5 year old boys and girls helping to develop balance, co-ordination and control of a football. Also enhancing their social skills and confidence.",Booking needed,"First session is free - £5-£6.50 per session after
+(joining fee is a one off payment of £27.50)",53.4426424,-2.1045757
+ID5,Footy Tots,Green Parc Centre,"Bakewell Avenue, off Mancunian Way, Haughton Green. Denton",M34 7DR,1.5-5 years,07737 650 391,"10:00,
+13:00",Tuesday,"A unique play programme for 18 months - 5 year old boys and girls helping to develop balance, co-ordination and control of a football. Also enhancing their social skills and confidence.",Booking needed,"First session is free - £5-£6.50 per session after
+(joining fee is a one off payment of £27.50)",53.4426424,-2.1045757
+ID6,Footy Tots,Astley Sports Centre.,"Yew Tree Lane, Dukinfield",SK16 5BL,1.5-5 years,07737 650 391,16:00,Tuesday,"A unique play programme for 18 months - 5 year old boys and girls helping to develop balance, co-ordination and control of a football. Also enhancing their social skills and confidence.",Booking needed,"First session is free - £5-£6.50 per session after
+(joining fee is a one off payment of £27.50)",53.4694167,-2.0712157
+ID7,Footy Tots,Hurst Community Centre,"Kings Road, Ashton",OL6 8EZ,1.5-5 years,07737 650 391,"10:00, 
+11:00, 
+13:00",Wednesday,"A unique play programme for 18 months - 5 year old boys and girls helping to develop balance, co-ordination and control of a football. Also enhancing their social skills and confidence.",Booking needed,"First session is free - £5-£6.50 per session after
+(joining fee is a one off payment of £27.50)",53.4989728,-2.081997
+ID8,Footy Tots,Astley Sports Centre.,"Yew Tree Lane, Dukinfield",SK16 5BL,1.5-5 years,07737 650 391,16:00,Wednesday,"A unique play programme for 18 months - 5 year old boys and girls helping to develop balance, co-ordination and control of a football. Also enhancing their social skills and confidence.",Booking needed,"First session is free - £5-£6.50 per session after
+(joining fee is a one off payment of £27.50)",53.4694167,-2.0712157
+ID9,Footy Tots,Green Parc Centre,"Bakewell Avenue, off Mancunian Way, Haughton Green. Denton",M34 7DR,1.5-5 years,07737 650 391,"10:00, 
+13:00",Thurday,"A unique play programme for 18 months - 5 year old boys and girls helping to develop balance, co-ordination and control of a football. Also enhancing their social skills and confidence.",Booking needed,"First session is free - £5-£6.50 per session after
+(joining fee is a one off payment of £27.50)",53.4426424,-2.1045757
+ID10,Footy Tots,Astley Sports Centre,"Yew Tree Lane, Dukinfield",SK16 5BL,1.5-5 years,07737 650 391,16:00,Thursday,"A unique play programme for 18 months - 5 year old boys and girls helping to develop balance, co-ordination and control of a football. Also enhancing their social skills and confidence.",Booking needed,"First session is free - £5-£6.50 per session after
+(joining fee is a one off payment of £27.50)",53.4694167,-2.0712157
+ID11,Footy Tots,Hurst Community Centre,"Kings Road, Ashton",OL6 8EZ,1.5-5 years,07737 650 391,"17:00, 
+18:00",Thursday,"A unique play programme for 18 months - 5 year old boys and girls helping to develop balance, co-ordination and control of a football. Also enhancing their social skills and confidence.",Booking needed,"First session is free - £5-£6.50 per session after
+(joining fee is a one off payment of £27.50)",53.4989728,-2.081997
+ID12,Footy Tots,Hurst Community Centre,"Kings Road, Ashton",OL6 8EZ,1.5-5 years,07737 650 391,"10:00, 
+11:00",Friday,"A unique play programme for 18 months - 5 year old boys and girls helping to develop balance, co-ordination and control of a football. Also enhancing their social skills and confidence.",Booking needed,"First session is free - £5-£6.50 per session after
+(joining fee is a one off payment of £27.50)",53.4989728,-2.081997
+ID13,Footy Tots,Astley Sports Centre,"Yew Tree Lane, Dukinfield",SK16 5BL,1.5-5 years,07737 650 391,"16:30
+17:30",Friday,"A unique play programme for 18 months - 5 year old boys and girls helping to develop balance, co-ordination and control of a football. Also enhancing their social skills and confidence.",Booking needed,"First session is free - £5-£6.50 per session after
+(joining fee is a one off payment of £27.50)",53.4694167,-2.0712157
+ID14,Footy Tots,Greswell Primary School,"Percy Road, off Town Lane, Denton",M34 2DH,1.5-5 years,07737 650 391,"9:00, 
+10:00, 
+11:00, 
+12:00, 
+13:00, 
+14:00",Saturday,"A unique play programme for 18 months - 5 year old boys and girls helping to develop balance, co-ordination and control of a football. Also enhancing their social skills and confidence.",Booking needed,"First session is free - £5-£6.50 per session after
+(joining fee is a one off payment of £27.50)",53.4491454,-2.1192572
+ID15,Footy Tots,Green Parc Centre,"Bakewell Avenue, off Mancunian Way, Haughton Green. Denton",M34 7DR,1.5-5 years,07737 650 391,"10:00, 
+11:00, 
+12:00",Sunday,"A unique play programme for 18 months - 5 year old boys and girls helping to develop balance, co-ordination and control of a football. Also enhancing their social skills and confidence.",Booking needed,"First session is free - £5-£6.50 per session after
+(joining fee is a one off payment of £27.50)",53.4426424,-2.1045757
+ID16,Hurst Nook Tots Group,Hurst Nook United Reformed Church,"Hurst Cross, Nook Lane",OL6 9HJ,0-5 years,0161 339 2207,10:00,Thursday,Play session for toddlers.,No booking needed,£1 per family,53.5027517,-2.0762752
+ID17,West End Tiny Tots,West End Methodist Church,8 Fitzroy St / Trafalgar Square (off Kelvin Street) Ashton-under-Lyne,OL7 0JP,0-5 years,0161 343 7581,9:15,Tuesday,Play session for toddlers.,No booking needed,£2 per session,53.4797697,-2.1092941
+ID18,West End Tiny Tots,West End Methodist Church,8 Fitzroy St / Trafalgar Square (off Kelvin Street) Ashton-under-Lyne,OL7 0JP,0-5 years,0161 343 7581,9:15,Thursday,Play session for toddlers.,No booking needed,£2 per session,53.4797697,-2.1092941
+ID19,Holden Clough Tots Group,Holden Clough Community Primary School,"St Albans Avenue, Ashton-under-Lyne",OL6 8XN,0-5 years,07535 408 119,9:15,Wednesday,Play session for toddlers.,No booking needed,"£2 entry for 1 adult and 1 child
+Extra 50p for each additional child",53.50837360000001,-2.0834776
+ID20,Treasured Tots,New Life Church,"St James Street,
+Ashton-under-Lyne",OL6 6SF,0-5 years,0161 339 7924,9:30,Monday,Play session for toddlers.,No booking needed,£1 per session – includes a drink and snack,53.4861319,-2.0767585
+ID21,Bouncing Babies,New Life Church,"St James Street,
+Ashton-under-Lyne",OL6 6SF,0-1 years,0161 339 7924,10:00,Friday,Baby session.,No booking needed,£1 per session – includes a drink and snack,53.4861319,-2.0767585
+ID22,Ryecroft Tots,Ryecroft Hall,"Manchester Rd, Audenshaw",M34 5ZJ,0-5 years,0161 342 5386,9:30,Wednesday,Tots Stay and Play. Brew for the adults and snacks for the little ones. Great for new Mums to get to know others.,-,£2.50 per child,53.4770339,-2.13032
+ID23,Crafty Kids,Carmel Christian Centre,"Seymour St, Denton",M34 3PF,0-5 years,0790 541 6085,9:15,Friday,"Crafty Kids playgroup is a friendly group run by volunteers. They welcome all children from birth to 5 years old and enjoy playtime, craft, storytime & singtime. Its a relaxed environment and they serve FREE tea and toast.",Booking needed,"Under 1 year old: £1
+Over 1 year old: £2 and multiple children £3",53.4577703,-2.1232277
+ID24,Dads and Tots Group,Carmel Christian Centre,"Seymour St, Denton",M34 3PF,0-5 years,0161 612 0925,10:00,Saturday,"Every second Saturday of the month.
+A morning of fun for dads and kids.
+Play and activities, singing and stories, arts and crafts.",Booking needed,£2 per child,53.4577703,-2.1232277
+ID25,Dane Bank,Dane Bank School,"Thornley Lane, South Denton",SK5 6QL,0-5 years,0161 336 5896,9:15,Tuesday,Play session for toddlers.,-,£2.50 per 1 adult and 1 child,53.4497913,-2.1519933
+ID26,Dane Bank,Dane Bank School,"Thornley Lane, South Denton",SK5 6QL,0-5 years,0161 336 5896,9:15,Thursday,Play session for toddlers.,-,£2.50 per 1 adult and 1 child,53.4497913,-2.1519933
+ID27,Sunbeams Toddler Group,Droylsden Methodist Church,"Dunkirk Street, Droylsden",M43 7DZ,0-5 years,0161 432 4710,9:15,Friday,Play session for toddlers with singing and rhyme time at the end of session. Includes snacks for kids and tea or coffee for parents.,No booking needed,£2 per family,53.4816599,-2.1409122
+ID28,Little Lambs,St Mary’s Church Centre,"Meadow Lane, Haughton Green,
+Denton",M34 7GD,0-5 years,0161 336 4529,10:00,Saturday,"Little Lambs is a popular Carer and Toddler group. We aim to provide an exciting, safe, friendly, and fun environment for children and their carers to socialise, play, interact and enjoy themselves with a variety of play activities with appropriate and child-friendly equipment for all preschool children.
+ 
+Through play, craft, stories, and song we also share the love of Jesus Christ and celebrate the Christian festivals throughout the year.",No booking needed,£2.50 per family,53.438088,-2.1012829
+ID29,,,,,,,,,,,,,
