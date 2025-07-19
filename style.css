@@ -1,0 +1,60 @@
+body {
+  background-color: lightblue;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.st-key-styledinput{
+    width: 100%;
+    padding: 10px;
+    background-color: lightblue;
+    border: 2px solid #0b8797;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.st-key-styledinput2{
+    width: 100%;
+    padding: 10px;
+    background-color: lightblue;
+    border: 2px solid #0b8797;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.st-key-styledinput3{
+    width: 100%;
+    padding: 10px;
+    background-color: lightblue;
+    border: 2px solid #0b8797;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.st-key-resultStyle button{
+    background-color: #0b8797;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.st-key-containerStyle{
+    background-color: rgb(226, 238, 159);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.st-comment_input{
+    width: 100%;
+    padding: 10px;
+    background-color: lightblue;
+    border: 2px solid #0b8797;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.st-key-searchbutton{
+    background-color: #0b8797;
+    color: rgb(12, 13, 66);
+    border: none;
+    padding: 7px 50px;
+    border-radius: 2px;
+    cursor: pointer;
+}

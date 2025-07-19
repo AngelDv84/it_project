@@ -56,7 +56,7 @@ def load_css(file_path):
     else:
         st.warning("CSS file not found!")
 
-css_path = pathlib.Path("assets/style.css")
+css_path = pathlib.Path("style.css")
 load_css(css_path)
 
 
